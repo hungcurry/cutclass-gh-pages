@@ -14,8 +14,8 @@ CutClass-gh-pages
 
 第五週作業       https://hungcurry.github.io/CutClass-gh-pages/week05-0531-gulp/index.html<br>
 
-第六週作業       https://hungcurry.github.io/CutClass-gh-pages<br>
+第六週作業       <br>
 
 第七週作業       https://hungcurry.github.io/CutClass-gh-pages/week07-0522-ASO/index-aos+animate.html<br>
 
-第八週作業       https://hungcurry.github.io/CutClass-gh-pages<br><br>
+第八週作業       <br>
