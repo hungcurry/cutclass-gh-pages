@@ -1,0 +1,33 @@
+// ---------------------------------------
+@import "./public/_reset.scss";
+@import "./public/_variable.scss";
+@import "./public/_mixin.scss";
+@import "./public/_base.scss";
+// ---------------------------------------
+@import "./layout/_header.scss";
+@import "./layout/_banner.scss";
+@import "./layout/_breadcrumb.scss";
+@import "./layout/_pagination.scss";
+@import "./layout/_footer.scss";
+
+// ------首頁------------------------------
+@import "./modules/_heroimage.scss";
+@import "./modules/_profession.scss";
+@import "./modules/_classic.scss";
+@import "./modules/_jointdesign.scss";
+@import "./modules/_quote.scss";
+@import "./modules/_contact.scss";
+
+// ------系列------------------------------
+@import "./modules/_products.scss";
+
+// ------門市------------------------------
+@import "./modules/_store.scss";
+@import "./modules/_store_inpage.scss";
+
+// ------部落格------------------------------
+@import "./modules/_blog.scss";
+@import "./modules/_blog_inpage.scss";
+
+// ------FAQ------------------------------
+@import "./modules/_question.scss";

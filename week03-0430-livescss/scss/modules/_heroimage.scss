@@ -1,0 +1,46 @@
+/*-------------------------*/
+/* heroImage
+---------------------------*/
+.heroImage {
+  width: 100%;
+  background-image: url("https://i.ibb.co/SyKDJBP/banner-375.png");
+  background-position: center center;
+  background-size: cover;
+  height: 39.4rem;
+  @media screen and (min-width: $mq768) {
+    background-image: url("https://i.ibb.co/rbb99qR/banner-768.png");
+    height: 84rem;
+  }
+  @media screen and (min-width: $mq1024) {
+    background-image: url("https://hexschool.github.io/webLayoutTraining1st/week3/banner.png");
+  }
+  >.container {
+    justify-content: flex-end;
+    @media screen and (min-width: $mq1024) {
+      padding: 3rem 0rem;
+    }
+  }
+  &＿inner {
+    text-align: right;
+  }
+  &＿inner p {
+    color: $text-primary;
+    line-height: 2.2rem;
+    font-weight: 500;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2rem , 2.8rem);
+    }
+    @media screen and (min-width: $mq1024) {
+      @include fontSize(3.6rem , 5rem);
+    }
+  }
+  &＿inner .heroImage＿title{
+    @include fontSize(3.2rem , 4.5rem);
+    @media screen and (min-width: $mq768) {
+      @include fontSize(4.8rem , 6.7rem);
+    }
+    @media screen and (min-width: $mq1024) {
+      @include fontSize(6.4rem , 9rem);
+    }
+  }
+}

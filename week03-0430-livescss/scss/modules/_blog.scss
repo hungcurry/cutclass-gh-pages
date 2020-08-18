@@ -1,0 +1,274 @@
+/*-------------------------*/
+/* blog
+---------------------------*/
+.blogBar{
+  background-color: $text-primary;
+  .container{
+    @media screen and (min-width: $mq768) {
+      justify-content: space-between;
+    }
+    .blogNav{
+      @include width(100% , 0vh);
+      position: fixed;
+      top: 5rem;
+      left: 0;
+      z-index: 998;
+      transition: all .8s;
+      @media screen and (min-width: $mq768) {
+        width: auto;
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+    }
+    .blogNav.active{
+      height: 100vh;
+    }
+    .searchIcon{
+      text-align: center;
+      display: none;
+      @media screen and (min-width: $mq768) {
+        display: flex;
+      }
+    }
+    .fa-search{
+      @include width(2.4rem , 2.4rem);
+    }
+  }
+}
+//選單
+.blogNav{
+  .blogMenu{
+    width: 100%;
+    max-height: 0%;
+    overflow: hidden;
+    transition: all .8s;
+    @media screen and (min-width: $mq768) {
+      @include center(row, wrap, center , center);
+    }
+  }
+  .blogMenu.active{
+    max-height: 100%;
+  }
+  .blogMenu＿item{
+    background-color: $bg-white;
+    border-bottom: 0.1rem solid #00000020;
+    @media screen and (min-width: $mq768) {
+      background-color: transparent;
+      border-bottom: 0rem solid #00000020;
+      margin-right: 3.2rem;
+    }
+  }
+  .blogMenu＿item:last-child{
+    border-bottom: 0rem solid #00000020;
+    @media screen and (min-width: $mq768) {
+      margin-right: 0rem;
+    }
+  }
+  .blogMenu＿link{
+    @include fontSize(1.6rem , 2.2rem);
+    @include center(row, wrap, center, center);
+    color: $text-black;
+    font-family: "Roboto";
+    font-weight:900;
+    padding: 1.4rem 0;
+    @media screen and (min-width: $mq768) {
+      color: $text-fourthly;
+      padding: 1.6rem 0;
+    }
+    @media screen and (min-width: $mq1024) {
+      @include fontSize(2rem , 2.8rem);
+      padding: 1.3rem 0;
+    }
+  }
+  .blogMenu＿link.active{
+    @media screen and (min-width: $mq768) {
+      color: $text-white;
+    }
+  }
+  .blogMenu＿link:hover{
+    @media screen and (min-width: $mq1024) {
+      color: $text-white;
+    }
+  }
+  .blogMenu＿close{
+    @include fontSize(2rem , 2.8rem);
+    color: #000;
+    background-color: $bg-white;
+    font-style: normal;
+    text-align: center;
+    border: 0.1rem solid $bg-black; 
+    @media screen and (min-width: $mq768) {
+      display: none;
+    }
+  }
+  .fa-angle-up{
+    @extend %fa-set;
+  }
+  .fa-angle-down{
+    @extend %fa-set;
+  }
+}
+.blogMenu＿close:not(.active) .fa-angle-up{
+  display: none;
+}
+.blogMenu＿close.active .fa-angle-down{
+  display: none;
+}
+//部落格
+.blog{
+  padding-top:2.4rem;
+  padding-bottom:5.6rem;
+  @media screen and (min-width: $mq768) {
+    padding-top: 4rem;
+    padding-bottom: 10.4rem;
+  }
+  @media screen and (min-width: $mq1024) {
+    padding-top: 8.8rem;
+    padding-bottom: 15.6rem;
+  }
+  .container{
+    .blog＿inner{
+      width: 100%;
+    }
+  }
+}
+.blogList{
+  @media screen and (min-width: $mq1024) {
+    padding-bottom: 0.8rem;
+  }
+  .blogList＿item {
+    margin-bottom: 2.4rem;
+    @media screen and (min-width: $mq768) {
+      margin-bottom: 3.2rem;
+      display:flex;
+    }
+    @media screen and (min-width: $mq768) {
+      margin-bottom: 6rem;
+    }
+  }
+  .blogList＿item:last-child {
+    margin-bottom: 2rem;
+    @media screen and (min-width: $mq768) {
+      margin-bottom: 3.2rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      margin-bottom: 6rem;
+    }
+  }
+  //圖片區塊
+  .blogList＿item＿header{
+    margin-bottom: 0.8rem;
+    @media screen and (min-width: $mq768) {
+      width: calc(50% - 1.2rem);
+      margin-bottom: 0rem;
+      margin-right: 2.4rem;
+    }
+    .imgBox{
+      width: 100%;
+      padding-top: 54.82%;
+      @media screen and (min-width: $mq768) {
+        padding-top: 58.95%;
+      }
+      @media screen and (min-width: $mq1024) {
+        padding-top: 68.02%;
+      }
+    }
+    .imgBox＿fit{
+      @include width(100% , 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .image{
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: inherit;
+    }
+  }
+  //文章區塊
+  .blogList＿item＿body{
+    @media screen and (min-width: $mq768) {
+      width: calc(50% - 1.2rem);
+    }
+    .row{
+      margin-bottom: 1.6rem;
+      @media screen and (min-width: $mq1024) {
+        margin-bottom: 4rem;
+      }
+    }
+    .title{
+      @include fontSize(1.6rem , 2.2rem);
+      @extend %Roboto;
+      @media screen and (min-width: $mq768) {
+        @include fontSize(2rem , 2.8rem);
+      }
+      @media screen and (min-width: $mq1024) {
+        @include fontSize(3.2rem , 4.5rem);
+      }
+    }
+    .subtitle{
+      @include fontSize(1.4rem , 1.9rem);
+      @extend %Roboto;
+      color: $text-black;
+      @media screen and (min-width: $mq768) {
+        @include fontSize(1.6rem , 2.1rem);
+      }
+      @media screen and (min-width: $mq1024) {
+        @include fontSize(2rem , 2.6rem);
+      }
+    }
+    .data{
+      @include fontSize(1.4rem , 1.9rem);
+      @media screen and (min-width: $mq1024) {
+        @include fontSize(1.6rem , 2.1rem);
+      }
+    }
+    p.txt{
+      @include fontSize(1.4rem , 2.1rem);
+      color: $text-blog-txt;
+      font-weight: 300;
+      @media screen and (min-width: $mq1200) {
+        display: block;
+        @include fontSize(2rem , 3rem);
+      }
+    }
+    .mdMore{
+      @include fontSize(1.4rem , 2.1rem);
+      @extend %Roboto;
+      @extend %More;
+      display: none;
+      @media screen and (min-width: $mq768) {
+        display: block;
+      }
+      @media screen and (min-width: $mq1024) {
+        @include fontSize(2rem , 2.1rem);
+      }
+      @media screen and (min-width: $mq1200) {
+        display: none;
+      }
+    }
+    .xlMore{
+      @include fontSize(3.6rem , 4.2rem);
+      @extend %Roboto;
+      @extend %More;
+      @media screen and (min-width: $mq1200) {
+        display: flex;
+        align-items: center;
+      }
+      &:hover{
+        .arrow{
+          transition: all .8s;
+          transform: translateX(1rem);
+        }
+      }
+      .More{
+        margin-right: 0.8rem;
+      }
+      .arrow{
+        @include width(2.4rem , 2.4rem);
+      }
+    }
+  }
+}

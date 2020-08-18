@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ANSWER-Admin</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <!-- 左邊選單 -->
+    <nav class="sidebar d-flex flex-column justify-content-between">
+
+      <ul class="d-flex flex-column">
+        <h1>
+          <a href="./index.html">
+            <img src="./assets/images/logo-ANSWER.svg" alt="">
+          </a>
+        </h1>
+
+        <li >
+          <a href="javascript:;" class="d-flex align-items-center">
+            <span class="material-icons">insert_chart</span>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="d-flex align-items-center">
+            <span class="material-icons">forum</span>
+            Question
+          </a>
+        </li>
+        <li class="active">
+          <a href="./index.html"  class="d-flex align-items-center">
+            <span class="material-icons">assignment</span>
+            Assignment
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;"  class="d-flex align-items-center">
+            <span class="material-icons">video_library</span>
+            Course
+          </a>
+        </li>
+        <li>
+          <a href="./admin.html"  class="d-flex align-items-center">
+            <span class="material-icons">supervisor_account</span>
+            Admin
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;"  class="d-flex align-items-center">
+            <span class="material-icons">settings</span>
+            Settings
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="user d-flex">
+        <img src="./assets/images/andychen.jpeg" alt="">
+        <div>
+          <p>Andy Chen</p>
+          <p>andy0401@mail.com</p>
+        </div>
+      </div>
+
+    </nav>
+
+
+    
+<main class="main">
+
+  <!-- 上方選單 -->
+  <section class="topNav d-flex flex-nowrap justify-content-between align-items-center">
+
+    <div class="topNavOuter d-flex flex-nowrap justify-content-start align-items-center">
+      <h2 class="title lato-700">Admin</h2>
+        <button class="btn dropdown-toggle adminBtn lato-700" type="button" data-toggle="modal" data-target="#newAddModal">
+          <span class="material-icons adminBtn-icon">add</span>
+          Add New Admin
+        </button>
+        <!-- newAddModal -->
+        <div class="modal fade" id="newAddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modalCardList">
+              <div class="modal-header">
+                <h5 class="modal-title mb-5" id="exampleModalLongTitle">New Admin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="material-icons">close</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- account -->
+                <form action="index.html" method="post">
+                  <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                  <label for="name" class="mb-1">Name</label>
+                  <br>
+                  <input type="text" id="name" class="w-100 mb-4" placeholder="Emir Wicks">
+                  <br>
+                  <label for="email" class="mb-1">Email</label>
+                  <br>
+                  <input type="text" id="email" class="w-100" placeholder="emir.wicks@mail.com">
+                </form>
+                <hr class="hr my-5">
+  
+                <!-- Verification -->
+                <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                  <i class="material-icons text-danger mr-2">
+                    warning
+                  </i>
+                  unverified
+                </span>
+                <button type="button" class="btn btn-outline-secondary btn-send w-100">Send Verification Mail</button>
+                <hr class="hr">
+  
+                <!-- access -->
+                <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                  <option value="-Choose access-">-Choose access level-</option>
+                  <option value="-admin-">-Admin-</option>
+                  <option value="-admin-">-Manufacturer-</option>
+                </select>
+                
+                <hr class="hr">
+  
+                <!-- Custom Access -->
+                <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                <ul class="form-check p-0">
+                  <label class="form-check-option font-weight-normal">Lecture
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="form-check-option font-weight-normal">Coupon
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="form-check-option font-weight-normal">Message
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="form-check-option font-weight-normal">Setting
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="form-check-option font-weight-normal">Task menu
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" value="submit">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="materialGroup">
+      <ul class="d-flex flex-nowrap justify-content-end align-items-center">
+        <li>
+          <a href="javascript:;">
+            <span class="material-icons material-search">search</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span class="material-icons">notifications_active</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+  </section>
+
+  <!-- 內容 -->
+  <section class="adminContent">
+    <table class="table table-hover">
+
+      <thead class="admin-thead table-primary">
+				<tr class="admin-thead-tr">
+					<th class="admin-thead-th h4" scope="col">ID
+						<span class="material-icons material-downward">arrow_downward</span>
+					</th>
+					<th class="admin-thead-th h4" scope="col">Name</th>
+					<th class="admin-thead-th h4" scope="col">Email</th>
+					<th class="admin-thead-th h4" scope="col">Verified</th>
+					<th class="admin-thead-th h4" scope="col"></th>
+				</tr>
+      </thead>
+      
+      <tbody class="admin-tbody">
+        <tr>
+          <th scope="row">#1</th>
+          <td data-toggle="modal" data-target="#readModalCenter01">Emir Wicks</td>
+          <td data-toggle="modal" data-target="#readModalCenter01">emir.wicks@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter01">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter01">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter01" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#1</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample01" role="button" aria-expanded="false" aria-controls="collapseExample01">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample01">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong01">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong01" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name01" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name01" class="bg-primary border-0 w-100 mb-4" placeholder="Emir Wicks">
+                      <br>
+                      <label for="email01" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email01" class="bg-primary border-0 w-100" placeholder="emir.wicks@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#2</th>
+          <td data-toggle="modal" data-target="#readModalCenter02">Zaina Goldsmith</td>
+          <td data-toggle="modal" data-target="#readModalCenter02">zaina.goldsmith@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter02">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter02">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter02" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#2</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample02" role="button" aria-expanded="false" aria-controls="collapseExample02">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample02">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong02">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong02" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name02" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name02" class="bg-primary border-0 w-100 mb-4" placeholder="Zaina Goldsmith">
+                      <br>
+                      <label for="email02" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email02" class="bg-primary border-0 w-100" placeholder="zaina.goldsmith@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#3</th>
+          <td data-toggle="modal" data-target="#readModalCenter03">Mahima Lopez</td>
+          <td data-toggle="modal" data-target="#readModalCenter03">Mahima.Lopez@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter03">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter03">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter03" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#3</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample03" role="button" aria-expanded="false" aria-controls="collapseExample03">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample03">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong03">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong03" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name03" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name03" class="bg-primary border-0 w-100 mb-4" placeholder="Mahima Lopez">
+                      <br>
+                      <label for="email03" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email03" class="bg-primary border-0 w-100" placeholder="Mahima.Lopez@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#4</th>
+          <td data-toggle="modal" data-target="#readModalCenter04">Pharrell Murray</td>
+          <td data-toggle="modal" data-target="#readModalCenter04">Pharrell.Murray@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter04">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter04">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter04" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#4</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample04" role="button" aria-expanded="false" aria-controls="collapseExample04">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample04">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong04">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong04" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name04" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name04" class="bg-primary border-0 w-100 mb-4" placeholder="Pharrell Murray">
+                      <br>
+                      <label for="email04" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email04" class="bg-primary border-0 w-100" placeholder="Pharrell.Murray@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#5</th>
+          <td data-toggle="modal" data-target="#readModalCenter05">Annika Mcbride</td>
+          <td data-toggle="modal" data-target="#readModalCenter05">Annika.Mcbride@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter05">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter05">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter05" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#5</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample05" role="button" aria-expanded="false" aria-controls="collapseExample05">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample05">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong05">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong05" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name05" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name05" class="bg-primary border-0 w-100 mb-4" placeholder="Annika Mcbride">
+                      <br>
+                      <label for="email05" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email05" class="bg-primary border-0 w-100" placeholder="Annika.Mcbride@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#6</th>
+          <td data-toggle="modal" data-target="#readModalCenter06">Fatimah Clark</td>
+          <td data-toggle="modal" data-target="#readModalCenter06">Fatimah.Clark@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter06">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter06">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter06" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#6</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample06" role="button" aria-expanded="false" aria-controls="collapseExample06">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample06">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong06">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong06" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name06" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name06" class="bg-primary border-0 w-100 mb-4" placeholder="Fatimah Clark">
+                      <br>
+                      <label for="email06" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email06" class="bg-primary border-0 w-100" placeholder="Fatimah.Clark@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#7</th>
+          <td data-toggle="modal" data-target="#readModalCenter07">Klaudia Rhodes</td>
+          <td data-toggle="modal" data-target="#readModalCenter07">Klaudia.Rhodes@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter07">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter07">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter07" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#7</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample07" role="button" aria-expanded="false" aria-controls="collapseExample07">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample07">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong07">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong07" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name07" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name07" class="bg-primary border-0 w-100 mb-4" placeholder="Klaudia Rhodes">
+                      <br>
+                      <label for="email07" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email07" class="bg-primary border-0 w-100" placeholder="Klaudia.Rhodes@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#8</th>
+          <td data-toggle="modal" data-target="#readModalCenter08">Tillie Lucero</td>
+          <td data-toggle="modal" data-target="#readModalCenter08">Tillie.Lucero@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter08">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter08">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter08" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#8</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample08" role="button" aria-expanded="false" aria-controls="collapseExample08">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample08">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong08">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong08" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name08" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name08" class="bg-primary border-0 w-100 mb-4" placeholder="Tillie Lucero">
+                      <br>
+                      <label for="email08" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email08" class="bg-primary border-0 w-100" placeholder="Tillie.Lucero@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#9</th>
+          <td data-toggle="modal" data-target="#readModalCenter09">Sabrina Stephenson</td>
+          <td data-toggle="modal" data-target="#readModalCenter09">Sabrina.Stephenson@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter09">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter09">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter09" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#9</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample09" role="button" aria-expanded="false" aria-controls="collapseExample09">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample09">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong09">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong09" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name09" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name09" class="bg-primary border-0 w-100 mb-4" placeholder="Sabrina Stephenson">
+                      <br>
+                      <label for="email09" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email09" class="bg-primary border-0 w-100" placeholder="Sabrina.Stephenson@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">#10</th>
+          <td data-toggle="modal" data-target="#readModalCenter10">Annie Smith</td>
+          <td data-toggle="modal" data-target="#readModalCenter10">Annie.Smith@mail.com</td>
+          <td data-toggle="modal" data-target="#readModalCenter10">Yes</td>
+          <td class="button-group">
+            <button type="button" class="btn readBtn" data-toggle="modal" data-target="#readModalCenter10">
+							<span class="material-icons">remove_red_eye</span>
+            </button>
+            <!-- readModal -->
+            <div class="modal fade" id="readModalCenter10" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body readModal-body container">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="photo">
+                          <img class="photo-user" src="./assets/images/emir.jpeg" alt="photo-user">
+                        </div>
+                      </div>
+                      <div class="col-8 text-left">
+                        <div class="textOuter pl-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="h4 mb-3">#10</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" class="material-icons">close</span>
+                            </button>
+                          </div>
+                          <p class="h3 mb-1">Admin</p>
+                          <h4 class="h1 name">Emir Wicks</h4>
+                          <div class="email h4 mb-3">emir.wicks@mail.com</div>
+                          <div class="h4 d-flex justify-content-between align-items-center">
+                            <div class="text bg-primary">Verified</div>
+                            <div class="icon" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample10">
+                              <a href="#" class="text-secondary">
+                                <span class="material-icons">
+                                  expand_more
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="collapse" id="collapseExample10">
+                            <div class="modal-footer d-flex flex-nowrap justify-content-between align-items-center">
+                              <button type="button" class="btn btn-outline-danger btn-Deactivate mr-3" data-dismiss="modal">Deactivate</button>
+                              <button type="button" class="btn btn-secondary btn-Edit">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn editBtn" data-toggle="modal" data-target="#editModalLong10">
+							<span class="material-icons">edit</span>
+            </button>
+            <!-- editModal -->
+            <div class="modal fade" id="editModalLong10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modalCardList">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-5" id="exampleModalLongTitle">Edit Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="material-icons">close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- account -->
+                    <form action="index.html" method="post">
+                      <h5 class="h2 font-weight-bold mb-4">Account</h5>
+                      <label for="name10" class="mb-1">Name</label>
+                      <br>
+                      <input type="text" id="name10" class="bg-primary border-0 w-100 mb-4" placeholder="Annie Smith">
+                      <br>
+                      <label for="email10" class="mb-1">Email</label>
+                      <br>
+                      <input type="text" id="email10" class="bg-primary border-0 w-100" placeholder="Annie.Smith@mail.com">
+                    </form>
+                    <hr class="hr my-5">
+      
+                    <!-- Verification -->
+                    <h5 class="h2 font-weight-bold mb-4">Verification</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="d-flex align-items-center h4 font-weight-bold  mb-4">
+                        <i class="material-icons text-secondary mr-2">
+                          check_circle
+                        </i>
+                        Verified
+                      </span>
+                      <span class="h4 text-gray">2020/4/12</span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-send w-100">Send Verification Mail</button>
+                    <hr class="hr">
+      
+                    <!-- access -->
+                    <h5 class="h2 font-weight-bold mb-4">Access Level</h5>
+                    <select name="access" id="access" class="btn btn-access d-flex align-items-center justify-content-between w-100 px-4">
+                      <option value="-Choose access-">-Admin-</option>
+                      <option value="-admin-">-Manufacturer-</option>
+                    </select>
+                    
+                    <hr class="hr">
+      
+                    <!-- Custom Access -->
+                    <h5 class="h2 font-weight-bold mb-4">Custom Access</h5>
+                    <ul class="form-check p-0">
+                      <label class="form-check-option font-weight-normal">Lecture
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Coupon
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Message
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Setting
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="form-check-option font-weight-normal">Task menu
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </ul>
+                    <hr class="hr">
+
+                    <!-- Deactivate Account-->
+                    <h5 class="h2 font-weight-bold mb-4">Deactivate Account</h5>
+                      <span class="d-flex align-items-center h4 font-weight-bold text-danger mb-4">
+                        <i class="material-icons text-danger mr-2">
+                          warning
+                        </i>
+                        This cannot be undone!
+                      </span>
+                    <button type="button" class="btn btn-outline-danger btn-send border-danger w-100">Send Verification Mail</button>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary mr-4" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" value="submit">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </section>
+
+    <nav class="navigation d-flex justify-content-end" aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link page-arrow border-secondary" href="javascript:;">
+            <i aria-hidden="true" class="material-icons">chevron_left</i>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link border-secondary active" href="javascript:;">1</a></li>
+        <li class="page-item"><a class="page-link border-secondary" href="javascript:;">2</a></li>
+        <li class="page-item"><a class="page-link border-secondary" href="javascript:;">3</a></li>
+        <li class="page-item">
+          <a class="page-link border-secondary page-arrow" href="javascript:;">
+            <i aria-hidden="true" class="material-icons">chevron_right</i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+</main>
+
+
+
+  </div>
+
+
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+</body>
+
+</html>

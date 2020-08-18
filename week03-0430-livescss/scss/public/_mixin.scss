@@ -1,0 +1,56 @@
+// 水平置中
+@mixin center($direction: row, $wrap: wrap, $main-center:center, $sub-center:center) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $main-center;
+    align-items: $sub-center;
+}
+// 文字顏色
+@mixin textColor($color) {
+    color: $color;
+}
+// 文字大小／行距
+@mixin fontSize($size , $height) {
+    font-size: $size;
+    line-height: $height;
+}
+// 物件寬高
+@mixin width($width , $height) {
+    width: $width;
+    height: $height;
+}
+// fa設定
+%fa-set{
+    @include width(3.9rem , 2.4rem);
+    @include fontSize(2.4rem , 2.4rem);
+    font-family: FontAwesome !important;
+    color: $text-black;
+    text-align: center;
+}
+%flex-shrink{
+    flex-shrink: 0;
+    order: 1;
+}
+//消除藍框
+%focus{
+    outline: none;
+}
+%base_set{
+    width: 100%;
+    border: 0.1rem solid $bg-black ;
+    padding: 0.7rem 1.2rem;
+    background-color: transparent;
+}
+%Roboto{
+    font-family: "Roboto";
+    font-weight: 400;
+}
+%More{
+    color: $text-black;
+    font-weight: 900;
+    position: absolute;
+    right: 0.2rem;
+    bottom: -0.2rem;
+}
+

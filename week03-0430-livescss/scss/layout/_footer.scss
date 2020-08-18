@@ -1,0 +1,176 @@
+/*-------------------------*/
+/* footer
+---------------------------*/
+.footer{
+  background-color: $bg-primary;
+  @media screen and (min-width: $mq1024) {
+    padding-top: 4.8rem;
+    padding-bottom: 4rem;
+  }
+  >.container{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @media screen and (min-width: $mq1024) {
+      max-width: 115rem;
+    }
+  }
+  .row{
+    width:100%;
+    border-bottom: 0.1rem solid $text-white;
+    .footerNav{
+      width:100%;
+      display: none;
+      @media screen and (min-width: $mq768) {
+        display: flex;
+        margin-bottom: 2.4rem;
+      }
+      @media screen and (min-width: $mq1024) {
+        margin-bottom: 3.2rem;
+      }
+    }
+    .socialGroup{
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+    }
+  }
+  .copyright{
+    width:100%;
+    .logo{
+      @include width(4.6rem , 2.8rem);
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      @media screen and (min-width: $mq768) {
+        display: none;
+      }
+      @media screen and (min-width: $mq1024) {
+        @include width(8rem , 4.9rem);
+        display: block;
+        right: auto;
+        bottom: auto;
+        top: 2.4rem;
+        left: 0;
+      }
+    }
+  }
+}
+// 導覽列 
+.footerNav{
+  li{
+    margin-right: 4rem;
+    @media screen and (min-width: $mq1024) {
+      margin-right: 4.8rem;
+    }
+    &:last-child{
+      margin-right: 0rem;
+    }
+    .footerNav＿item{
+      @include fontSize(1.6rem , 2.2rem);
+    }
+  }
+}
+// 社群清單
+.socialGroup＿item{
+  @include width(2.4rem , 2.4rem);
+  margin-right: 2.4rem;
+  @media screen and (min-width: $mq1024) {
+    @include width(4.8rem , 4.8rem);
+  }
+  &:last-child{
+    margin-right: 0rem;
+  }
+}
+// 聯絡清單 
+.linkGroup＿item{
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  @media screen and (min-width: $mq768) {
+    margin-bottom: 1.1rem;
+  }
+  @media screen and (min-width: $mq1024) {
+    margin-bottom: 1.6rem;
+  }
+  &:last-child{
+    margin-bottom: 2.4rem;
+    @media screen and (min-width: $mq768) {
+      margin-bottom: 2.7rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  img{
+    @include width(2rem , 2rem);
+    margin-right: 0.5rem;
+    @media screen and (min-width: $mq768) {
+      @include width(3.2rem , 3.2rem);
+      margin-right: 0.8rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      @include width(4.8rem , 4.8rem);
+      margin-right: 1.2rem;
+    }
+  }
+  a{
+    @include fontSize(1.6rem , 2.1rem);
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2rem , 2.6rem);
+    }
+    @media screen and (min-width: $mq1024) {
+      @include fontSize(3.6rem , 4.8rem);
+    }
+  }
+}
+// copyright
+.copyright＿text {
+  padding-top: 1.6rem;
+  @media screen and (min-width: $mq768) {
+    padding-top: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: $mq1024) {
+      padding-top: 4rem;
+      padding-left: 11.8rem;
+    }
+  }
+  p{
+    @include fontSize(1.4rem , 2rem);
+    color: $text-white;
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(1.6rem , 2.1rem);
+      margin-bottom: 0rem;
+    }
+    &:last-child{
+      margin-bottom: 0rem;
+    }
+  }
+  .copyright＿text＿inner{
+    display: block;
+    @media screen and (min-width: $mq768) {
+      display:flex;
+    }
+    .privacy{
+      @include fontSize(1.4rem , 2.1rem);
+      margin-right: 2.4rem;
+      @media screen and (min-width: $mq1024) {
+        margin-right: 6.2rem;
+      }
+    }
+    .article{
+      @include fontSize(1.4rem , 2rem);
+      margin-right: 0rem;
+      @media screen and (min-width: $mq768) {
+        text-align: right;
+      }
+    }
+  }
+}
+

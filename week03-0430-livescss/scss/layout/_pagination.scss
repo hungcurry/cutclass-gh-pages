@@ -1,0 +1,65 @@
+/*-------------------------*/
+/* pagination
+---------------------------*/
+.navigation{
+  padding-top: 2rem;
+  @media screen and (min-width: $mq768) {
+    display: none;
+  }
+  .pagination{
+      max-width: 24rem;
+      display: flex;
+      margin: auto;
+      border: 0.1rem solid #555555;
+      @media screen and (min-width: $mq768) {
+        max-width: 36.8rem;
+      }
+    li + li{
+      border-left: 0.1rem solid #555555;
+    }
+    .page-item{
+      transition: all .3s;
+      flex-grow: 1;
+    }
+    .page-item:hover{
+      background-color: $bg-black ;
+      .page-link{
+        color: $text-white;
+      }
+    }
+    .page-item.active{
+      background-color: $bg-black ;
+      .page-link{
+        color: $text-white;
+      }
+    }
+    .page-link{
+      @include fontSize(1.2rem , 1.7rem);
+      color:#555;
+      padding: 0.8rem;
+      text-align: center;
+      @media screen and (min-width: $mq768) {
+        @include fontSize(1.8rem , 2.4rem);
+      }
+    }
+    .previous,.next{
+      flex-grow: 2;
+      text-align: center;
+      background-color:$bg-thirdly;
+    }
+    .previous:hover,.next:hover{
+      background-color:$bg-fourthly;
+      .page-link{
+        color: $text-black;
+      }
+    }
+  }
+}
+
+//其餘分頁設定
+.products  .navigation{
+  display: block;
+}
+.blog  .navigation{
+  display: block;
+}

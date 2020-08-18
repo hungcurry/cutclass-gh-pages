@@ -1,0 +1,92 @@
+/*-------------------------*/
+/* question
+---------------------------*/
+.question{
+  @media screen and (min-width: $mq1024) {
+    padding-top: 8.8rem;
+  }
+  .container{
+    .question＿inner{
+      width: 100%;
+      padding-bottom: 3.2rem;
+      @media screen and (min-width: $mq768) {
+        padding-bottom: 6.4rem;
+      }
+      @media screen and (min-width: $mq1024) {
+        padding-bottom: 9.2rem;
+      }
+    }
+    h3{
+      color:$text-black;
+      @include fontSize(2rem , 2.8rem);
+      font-weight: 500;
+      font-style: normal;
+      margin-bottom: 1.6rem;
+      @media screen and (min-width: $mq768) {
+        @include fontSize(2.8rem , 4rem);
+        margin-bottom: 3.2rem;
+      }
+      @media screen and (min-width: $mq1024) {
+        @include fontSize(3.2rem , 4.5rem);
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+}
+// 選項內容
+.question＿card{
+  border-left: 0.1rem solid $bg-black;
+  border-right: 0.1rem  solid $bg-black;
+  border-bottom: 0.1rem  solid $bg-black;
+  .card＿item＿header{
+    padding: 1.6rem 0.8rem 1.6rem 1.6rem;
+    @media screen and (min-width: $mq768) {
+      padding: 1.6rem 2.4rem ;
+    }
+    @media screen and (min-width: $mq1024) {
+      padding: 2.2rem 3.8rem;
+    }
+    border-top: 0.1rem solid $bg-black;
+      a{
+        @include center(row, nowrap, space-between, center);
+      }
+      h4{
+        color:$text-black;
+        @include fontSize(1.6rem , 2.2rem);
+        @media screen and (min-width: $mq1024) {
+          @include fontSize(2rem , 2.8rem);
+        }
+      }
+      .fa-angle-up{
+        @extend %fa-set;
+      }
+      .fa-angle-down{
+        @extend %fa-set;
+      }
+  }
+  .card＿item＿body{
+    background-color: #f2f2f2;
+    border-top: 0.1rem solid $bg-black;
+    padding: 1.6rem;
+    @media screen and (min-width: $mq768) {
+      padding: 1.6rem 2.4rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      padding: 2.2rem 3.8rem;
+    }
+    p{
+      @include fontSize(1.4rem , 2.1rem);
+      @media screen and (min-width: $mq1024) {
+        @include fontSize(1.6rem , 2.4rem);
+      }
+    }
+  }
+}
+.card＿item:not(.active) .fa-angle-down{
+  display: none;
+}
+.card＿item.active .fa-angle-up{
+  display: none;
+}
+
+

@@ -1,0 +1,114 @@
+/*-------------------------*/
+/* classic
+---------------------------*/
+.classic{
+  background-color: $bg-white;
+  .container{
+    flex-direction: column;
+  }
+}
+.glass-group{
+  width: 100%;
+  .glass＿item{
+    margin-bottom: 0.8rem;
+    @media screen and (min-width: $mq768) {
+      display: flex;
+      align-items:center;
+    }
+    @media screen and (min-width: $mq1024) {
+      margin-bottom: 3.2rem;
+    }
+      &:last-child{
+        margin-bottom: 0rem;
+    }
+  }
+}
+.glass-group .imgBox{
+  @extend %flex-shrink;
+  width: 100%;
+  cursor: pointer;
+  @media screen and (min-width: $mq768) {
+    width: 60%;
+  }
+  @media screen and (min-width: $mq1200) {
+    width: 66%;
+  }
+  .sunglasses{
+    filter:grayscale(1);
+    transition: all .3s;
+  }
+  &:hover{
+    .sunglasses{
+      filter:grayscale(0);
+    }
+  }
+}
+.glass-group .txt{
+  @extend %flex-shrink;
+  width: 100%;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include center(row, nowrap, center, center);
+  @media screen and (min-width: $mq768) {
+    width: 40%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+  }
+  @media screen and (min-width: $mq1200) {
+    width: 34%;
+    justify-content: flex-start;
+    padding-left: 2.4rem;
+  }
+  .glass＿icon{
+    @include width(3.2rem , 3.2rem);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.8rem;
+    @media screen and (min-width: $mq1024) {
+      @include width(4.8rem , 4.8rem);
+    }
+    &.icon-glass-optical{
+      background-image: url('../../images/index/icon-diamond-white.svg');
+    }
+    &.icon-glass-sunglasses{
+      background-image: url('../../images/index/icon-sun-white.svg');
+    }
+    &.icon-glass-functional{
+      background-image: url('../../images/index/icon-thunder-white.svg');
+    }
+    @media screen and (min-width: $mq768) {
+      &.icon-glass-optical{
+        background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-diamond.svg');
+      }
+      &.icon-glass-sunglasses{
+        background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-sun.svg');
+      }
+      &.icon-glass-functional{
+        background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-thunder.svg');
+      }
+    }
+  }
+  >h3{
+    text-transform:uppercase;
+  }
+}
+@media screen and (min-width: $mq1200) {
+  .glass-group .glass＿item:nth-child(2) > .txt{
+    order: -1;
+    justify-content: flex-end;
+    padding-right: 2.4rem;
+  }
+}
+// 錯位用
+// .glass-group .glass＿item:nth-child(even) > .txt{
+//   margin-right: -10%;
+// }
+// .glass-group .glass＿item:nth-child(odd) > .imgBox{
+//   margin-right: -10%;
+// }
+
